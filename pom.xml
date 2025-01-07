@@ -96,6 +96,12 @@
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>19.8.0.0</version>  <!-- Adjust the version as per your Oracle version -->
+        </dependency>
+
 
 
     </dependencies>

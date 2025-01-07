@@ -15,7 +15,7 @@ public class ResourceDao {
     }
 
     public void insertResources(List<Resource> resources) throws SQLException {
-        String sql = "INSERT INTO z_resource (id, name, is_active) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO SRM_RESOURCES (ID, FULL_NAME, IS_ACTIVE) VALUES (?, ?, ?)";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             for (Resource resource : resources) {
                 ps.setInt(1,resource.getResourceId());
@@ -27,7 +27,7 @@ public class ResourceDao {
     }
 
     public boolean doesResourceExist(int resourceId) throws SQLException {
-        String sql = "SELECT COUNT(*) FROM z_resource WHERE id = ?";
+        String sql = "SELECT COUNT(*) FROM SRM_RESOURCES WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, resourceId);
             try (ResultSet rs = ps.executeQuery()) {

@@ -21,7 +21,7 @@ public class ProjectDao {
     }
 
     public void insertProjects(List<Project> projects) throws SQLException {
-        String sql = "INSERT INTO z_project (id, name, start, finish, created_date, is_active) VALUES (?, ?, ?, ?, ?,?)";
+        String sql = "INSERT INTO z_project (id, name, start_date, finish, created_date, is_active) VALUES (?, ?, ?, ?, ?,?)";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             for (Project project : projects) {
                 ps.setInt(1, project.getProjectId());
